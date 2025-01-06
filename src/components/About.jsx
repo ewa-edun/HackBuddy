@@ -11,7 +11,7 @@ function About(){
      HackBuddy is your ultimate hackathon companion, built to help you survive and thrive through the chaos of coding sprints! Whether you need to track upcoming hackathons, laugh off your blockers with our Excuse Generator, check off essential submission items, or plan your next coding adventure, HackBuddy has your back.
 
      It’s not just an app—it’s your virtual buddy in the exhilarating (and sometimes chaotic) world of hackathons. Because hey, who said hacking can’t be fun and functional? 😎
-     More info can be found in the <a href="" target="_blank">README</a> 
+     More info can be found in the <a href="https://github.com/ewa-edun/HackBuddy" target="_blank">README</a> 
     </p>
     <br/>
 
