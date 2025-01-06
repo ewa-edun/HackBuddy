@@ -1,17 +1,3 @@
-import axios from 'axios';
-
-// Fetch all hackathons
-axios.get('/hackathons')
-    .then(response => console.log(response.data))
-    .catch(error => console.error(error));
-
-// Add a new hackathon
-axios.post('/hackathons', {
-    name: 'Hackathon Name',
-    date: '2025-01-10',
-    status: 'Upcoming'
-}).then(response => console.log(response.data))
-  .catch(error => console.error(error));
 
 
 function HackTracker(){

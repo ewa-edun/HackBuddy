@@ -1,14 +1,3 @@
-import axios from 'axios';
-
-// Fetch all goals
-axios.get('/goals')
-    .then(response => console.log(response.data))
-    .catch(error => console.error(error));
-
-// Fetch motivational quotes
-axios.get('/motivational_quotes')
-    .then(response => console.log(response.data))
-    .catch(error => console.error(error));
 
 
 function WhatsNext() {

@@ -1,10 +1,4 @@
-import axios from 'axios';
 
-// Fetch excuse based on mood
-const mood = 'feeling_lazy'; // Example
-axios.get(`/excuse?mood=${mood}`)
-    .then(response => console.log(response.data))
-    .catch(error => console.error(error));
 
 function ExcuseGenerator() {
     return(

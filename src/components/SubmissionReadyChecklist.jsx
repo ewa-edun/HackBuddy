@@ -1,14 +1,3 @@
-import axios from 'axios';
-
-// Fetch all checklist items
-axios.get('/checklist')
-    .then(response => console.log(response.data))
-    .catch(error => console.error(error));
-
-// Add a new checklist item
-axios.post('/checklist', { task: 'Submit final report' })
-    .then(response => console.log(response.data))
-    .catch(error => console.error(error));
 
 function Submission() {
   return(
