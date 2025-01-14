@@ -1,0 +1,119 @@
+.hackathon-tracker {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.description {
+    color: #FFE5A5;
+    margin-bottom: 30px;
+}
+
+.add-button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #8B6220;
+    color: #FFE5A5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #9B7230;
+    transform: translateY(-2px);
+}
+
+.hackathon-form {
+    background-color: #1C1C1C;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hackathon-form input,
+.hackathon-form select {
+    padding: 8px;
+    border: 1px solid #8B6220;
+    border-radius: 4px;
+    background-color: #2D2B55;
+    color: #FFE5A5;
+}
+
+.hackathons-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.hackathon-card {
+    background-color: #1C1C1C;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.hackathon-card:hover {
+    transform: translateY(-5px);
+}
+
+.hackathon-card h3 {
+    color: #FFE5A5;
+    margin-bottom: 10px;
+}
+
+.status-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    text-transform: capitalize;
+}
+
+.hackathon-card.upcoming .status-badge {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.hackathon-card.registered .status-badge {
+    background-color: #2196F3;
+    color: white;
+}
+
+.hackathon-card.completed .status-badge {
+    background-color: #9E9E9E;
+    color: white;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.card-actions button {
+    flex: 1;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-actions button.delete {
+    background-color: #ff4444;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .hackathons-list {
+        grid-template-columns: 1fr;
+    }
+}

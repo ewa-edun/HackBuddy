@@ -1,53 +1,136 @@
-
+import { useState, useEffect } from 'react';
+import './WhatsNext.css';
 
 function WhatsNext() {
-  return(
-    <>
-    <h1>What’s Next Page</h1>
-    <p>
-    You have either completed a hackathon or about to start one. Congratulations. Before another hackathon starts, Reflect on your hackathon journey. Plan for your next big adventure with motivational content and future project ideas.
-    </p>
-    <br/>
+    const [goals, setGoals] = useState([
+        { id: 1, title: "Learn a New Tech Stack", description: "Master React Native for mobile development", achieved: false },
+        { id: 2, title: "Build Portfolio", description: "Create a personal website to showcase projects", achieved: false }
+    ]);
 
-    <h2>Find your next hackathon</h2>
-    <p>
-       <a>Devpost</a>
-       <a>Major League Hacking</a>
-       <a>Devfolio</a>
-       <a>Dora Hacks</a>
-    </p>
-    <br/>
+    const [newGoal, setNewGoal] = useState({ title: '', description: '' });
+    const [quote, setQuote] = useState('');
+    const [showForm, setShowForm] = useState(false);
 
-    <h2>Rest</h2>
-    <p>
-        Take a rest
-    </p>
-    <br/>
+    const hackathonPlatforms = [
+        { name: "Devpost", url: "https://devpost.com/hackathons" },
+        { name: "Major League Hacking", url: "https://mlh.io/seasons/2025/events" },
+        { name: "Devfolio", url: "https://devfolio.co/hackathons" },
+        { name: "Dora Hacks", url: "https://dorahacks.io/" }
+    ];
 
-    <h2>Goals</h2>
-    <p>
-      Set good goals.
-    </p>
-    <br/>
+    const motivationalQuotes = [
+        "Every expert was once a beginner.",
+        "The only way to do great work is to love what you do.",
+        "Your future self is watching you right now through memories.",
+        "The best time to plant a tree was 20 years ago. The second best time is now."
+    ];
 
-    <h2>Motivational Quotes</h2>
-    <p>
-      Some motivational quotes for you.
-    </p>
-    <br/>
+    useEffect(() => {
+        // This will be replaced with API call
+        const randomQuote = motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
+        setQuote(randomQuote);
+    }, []);
 
-    <h2>Hackathon Tips and Tricks</h2>
-    <p>
-      Some hackathon tips and tricks for you.
-    </p>
-    <br/>
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (newGoal.title && newGoal.description) {
+            setGoals([...goals, { ...newGoal, id: Date.now(), achieved: false }]);
+            setNewGoal({ title: '', description: '' });
+            setShowForm(false);
+        }
+    };
 
-    <h2>Test your Hackathon skills</h2>
-    <p>
-      A quiz to test your hackathon skills playfully.
-    </p>
-    <br/>
-    </>
-  )
+    const toggleGoal = (id) => {
+        setGoals(goals.map(goal => 
+            goal.id === id ? { ...goal, achieved: !goal.achieved } : goal
+        ));
+    };
+
+    return (
+        <div className="whats-next">
+            <h1>What's Next?</h1>
+            
+            <div className="quote-box">
+                <p className="quote">"{quote}"</p>
+                <button onClick={() => setQuote(motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)])}>
+                    New Quote
+                </button>
+            </div>
+
+            <section className="next-hackathon">
+                <h2>Find Your Next Hackathon</h2>
+                <div className="platform-grid">
+                    {hackathonPlatforms.map(platform => (
+                        <a 
+                            key={platform.name}
+                            href={platform.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="platform-card"
+                        >
+                            {platform.name}
+                        </a>
+                    ))}
+                </div>
+            </section>
+
+            <section className="goals">
+                <h2>Your Goals</h2>
+                <button 
+                    className="add-goal-button"
+                    onClick={() => setShowForm(!showForm)}
+                >
+                    {showForm ? 'Cancel' : 'Add New Goal'}
+                </button>
+
+                {showForm && (
+                    <form onSubmit={handleSubmit} className="goal-form">
+                        <input
+                            type="text"
+                            placeholder="Goal Title"
+                            value={newGoal.title}
+                            onChange={(e) => setNewGoal({...newGoal, title: e.target.value})}
+                            required
+                        />
+                        <textarea
+                            placeholder="Goal Description"
+                            value={newGoal.description}
+                            onChange={(e) => setNewGoal({...newGoal, description: e.target.value})}
+                            required
+                        />
+                        <button type="submit">Add Goal</button>
+                    </form>
+                )}
+
+                <div className="goals-list">
+                    {goals.map(goal => (
+                        <div 
+                            key={goal.id} 
+                            className={`goal-card ${goal.achieved ? 'achieved' : ''}`}
+                            onClick={() => toggleGoal(goal.id)}
+                        >
+                            <h3>{goal.title}</h3>
+                            <p>{goal.description}</p>
+                            <span className="status">
+                                {goal.achieved ? '✓ Achieved' : 'In Progress'}
+                            </span>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section className="tips">
+                <h2>Quick Tips</h2>
+                <ul>
+                    <li>Take time to reflect on your hackathon experience</li>
+                    <li>Document your learnings and challenges</li>
+                    <li>Connect with teammates on LinkedIn</li>
+                    <li>Share your project on social media</li>
+                    <li>Consider turning your hackathon project into a full product</li>
+                </ul>
+            </section>
+        </div>
+    );
 }
- export default WhatsNext
+
+export default WhatsNext;
