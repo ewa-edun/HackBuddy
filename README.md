@@ -4,19 +4,6 @@ Welcome to **HackBuddy**! Your ultimate companion for hackathon success. Whether
 
 ---
 
-## Table of Contents
-- Introduction
-- Features
-- Tech Stack
-- Installation
-- Usage
-- APIs
-- Contributing
-- License
-- References
-
----
-
 ## Introduction 🎮
 HackBuddy is a **web app** designed to enhance your hackathon experience. From tracking your upcoming hackathons to generating fun excuses and ensuring your submissions are on point, HackBuddy has your back.
 
@@ -84,13 +71,12 @@ Follow these steps to set up HackBuddy on your local machine:
 
 2. **Install Frontend Dependencies:**
    ```bash
-   cd frontend
    npm install
    ```
 
 3. **Install Backend Dependencies:**
    ```bash
-   cd ../backend
+   cd Backend
    pip install -r requirements.txt
    ```
 
@@ -101,7 +87,6 @@ Follow these steps to set up HackBuddy on your local machine:
 
 5. **Run the Frontend Server:**
    ```bash
-   cd ../frontend
    npm start
    ```
 
@@ -124,23 +109,6 @@ Follow these steps to set up HackBuddy on your local machine:
 
 ---
 
-## APIs 🌐
-
-### Hackathon CRUD API
-- **GET /hackathons**: Fetch all hackathons.
-- **POST /hackathons**: Create a new hackathon.
-- **PUT /hackathons/:id**: Update a hackathon.
-- **DELETE /hackathons/:id**: Delete a hackathon.
-
-### Excuse Generator API
-- **GET /excuses**: Fetch a random excuse.
-
-### Checklist API
-- **GET /checklist/:hackathon_id**: Fetch checklist items.
-- **POST /checklist/:hackathon_id**: Update checklist status.
-
----
-
 ## Contributing 📚
 I’d love your help! Here’s how you can contribute:
 
@@ -158,11 +126,6 @@ I’d love your help! Here’s how you can contribute:
    git push origin feature-name
    ```
 5. Open a Pull Request.
-
----
-
-## License 📄
-This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ---
 
