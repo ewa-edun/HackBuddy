@@ -1,10 +1,12 @@
- :root {
+:root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: #FAEFA5;
+  /* Slightly warmer yellow for better contrast */
+  color: #FFE5A5;
+  /* Slightly richer purple background */
   background-color: #2D2B55;
 
   font-synthesis: none;
@@ -12,16 +14,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* I want the color scheme to be dark shade of purple from vscode */
 
 a {
   font-weight: 550;
-  color: #FAEFA5;
+  color: #FFE5A5;
   text-decoration: none;
   padding: 3px;
 }
 a:hover {
-  color: #b1a975;
+  /* Warmer hover color */
+  color: #FFB347;
 }
 
 body {
@@ -42,7 +44,8 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #8B6220;
+  /* Slightly warmer gold for buttons */
+  background-color: #9B7230;
   cursor: pointer;
   transition: border-color 0.25s;
 }
