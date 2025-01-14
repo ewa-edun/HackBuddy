@@ -48,10 +48,10 @@ function WhatsNext() {
 
     return (
         <div className="whats-next">
-            <h1>What's Next?</h1>
+            <h1>What&apos;s Next?</h1>
             
             <div className="quote-box">
-                <p className="quote">"{quote}"</p>
+                <p className="quote">&quot;{quote}&quot;</p>
                 <button onClick={() => setQuote(motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)])}>
                     New Quote
                 </button>
