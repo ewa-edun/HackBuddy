@@ -2,6 +2,7 @@
 
 Welcome to **HackBuddy**! Your ultimate companion for hackathon success. Whether you're a hackathon rookie or a seasoned pro, HackBuddy has the tools to keep you organized, motivated, and submission-ready. Let’s dive into the world of hackathon greatness!
 
+Link: https://hack-buddy-silk.vercel.app/
 ---
 
 ## Introduction 🎮
@@ -50,8 +51,8 @@ Here’s what HackBuddy offers:
 - Checklist API.
 
 ### **Hosting:**
-- Frontend: **Vercel** or **Netlify**.
-- Backend: **Render** or **Railway**.
+- Frontend: **Vercel**
+Link: https://hack-buddy-silk.vercel.app/
 
 ---
 
