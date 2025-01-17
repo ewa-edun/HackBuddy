@@ -9,10 +9,8 @@ function Header() {
     <div>
       <header>
         <nav className="navbar">
-          {/* Title */}
           <Link to="/about" className="title">Hack Buddy</Link>
           
-          {/* Toggle Button for Mobile */}
           <button 
             className="menu-toggle" 
             onClick={() => setIsMobile(!isMobile)}

@@ -35,7 +35,7 @@ nav .title {
 /* Mobile Navigation (hidden by default) */
 .nav-buttons.mobile {
     flex-direction: column; /* Stacks items vertically */
-    gap: 10px;
+    gap: 5px;
     display: none; /* Hidden initially */
 }
 /* Links styling */
